@@ -92,9 +92,12 @@ alias rd="rmdir"
 alias ff="find ./ -name"
 alias eman="LANG=en man"
 alias cls="clear"
+alias dc="docker compose"
+# atcoder
+alias ojp="oj t -c 'python main.py' -d tests"
+alias accsp="acc s main.py -- -l 5055"
 
-
-# ビープ音を消す
+# turn off beep
 set bell-style none
 
 
@@ -123,11 +126,25 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 
-# nodenv
-eval "$(nodenv init -)"
+# Laravel
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+source /Users/kiyo/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/kiyo/.pyenv/versions/anaconda3-2022.10/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/kiyo/.pyenv/versions/anaconda3-2022.10/etc/profile.d/conda.sh" ]; then
+        . "/Users/kiyo/.pyenv/versions/anaconda3-2022.10/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/kiyo/.pyenv/versions/anaconda3-2022.10/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 
-## goenv
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$GOENV_ROOT/bin:$PATH
-eval "$(goenv init -)"
+export PATH="/Users/kiyo/.detaspace/bin:$PATH"
